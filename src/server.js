@@ -9,7 +9,7 @@ import userRoutes from './routes/api/userRoutes';
 import mongoURI from './config/keys';
 
 const app = express();
-// const PORT = 4000;
+const PORT = 80;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/images', express.static(path.join(__dirname, '../assets')));
@@ -36,6 +36,6 @@ app.get('*', (req, res) => {
 //     response.send(`Node and Express server running on port ${PORT}`);
 // });
 
-app.listen(process.env.PORT || 8000, () => {
-    console.log(`Server is listening on port 8000`);
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 });
